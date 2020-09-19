@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  nginx:  
+    image: "nginx:latest"
+    container_name: 'nginx-multi-dose'
+    hostname: 'nginx-multi-dose'
+    ports: 
+      - "7040:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./node_modules:/mnt/app/node-static
+      - ./static:/mnt/app/static
+      - ./index.html:/mnt/app/index.html
+

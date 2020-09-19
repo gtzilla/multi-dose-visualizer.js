@@ -1,0 +1,30 @@
+{
+  "name": "multi-dose-visualizer.js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "gtzilla",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "eslint-config-semistandard": "^15.0.0",
+    "eslint": "^7.9.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",    
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-standard": "^4.0.1",
+    "moment": "^2.27.0",
+    "navigo": "^7.1.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "semistandard": "^14.2.3",
+    "stylelint": "^13.6.1",
+    "stylelint-config-standard": "^20.0.0",    
+    "underscore": "^1.10.2"
+  },
+  "scripts": {
+    "lint":"eslint --fix && stylelint --fix static/css/*.css",
+    "start": "docker-compose -f docker-compose.yaml up"
+  }
+}

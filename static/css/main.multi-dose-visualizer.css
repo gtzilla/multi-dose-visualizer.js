@@ -1,0 +1,163 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+select,
+option,
+textarea,
+input {
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.visualize-data-starter {
+  margin: 10px 8vw 0;
+}
+
+.visualize-input-label {
+  margin: 10px 0;
+}
+
+.visualize-input-label input[type=text] {
+  margin-left: 10px;
+  padding: 5px 10px;
+  font-size: 12px;
+  width: 15vw;
+  border: 0;
+  outline: 0;
+  border-bottom: 3px dashed #aaa;
+}
+
+.visualize-input-label input:focus {
+  border-color: red;
+}
+
+.calendar-component-box {
+  border-top: 1px solid #efefef;
+  display: grid;
+  margin: 0 8vw;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(7, minmax(10vh, auto));
+}
+
+.calendar-controls-next-back {
+  /* display:grid; */
+
+  /* grid-template-columns: 90% auto; */
+  margin: 10px 8vw 20px;
+}
+
+.calendar-component-info-controls {
+  margin: 30px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendar-controls-next-back p {
+  padding-bottom: 10px;
+}
+
+.calendar-controls-next-back ul {
+  list-style: none;
+  display: flex;
+  grid-gap: 20px;
+}
+
+.calendar-controls-next-back ul li {
+  cursor: pointer;
+}
+
+.edge-day-single-box {
+  color: #999;
+}
+
+.edge-day-single-box,
+.calendar-date-box {
+  float: right;
+}
+
+.calendar-header-box {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 10px 20px;
+  grid-template-areas:
+    'headline headline'
+    'inputText inputDate'
+    'metaText metaText';
+  margin: 10px 8vw;
+}
+
+.calendar-header-box h1 {
+  grid-area: headline;
+}
+
+.calendar-header-box label {
+  grid-area: inputText;
+}
+
+.data-formatting-instructions-text {
+  color: #888;
+  font-size: 12px;
+  margin-top: -10px;
+  grid-area: metaText;
+}
+
+.calendar-header-box input[type=date] {
+  grid-area: inputDate;
+  text-indent: 10px;
+
+  /* border-radius:3px; */
+  border: 0;
+}
+
+.calendar-back-month-arrow {
+  background: url(/static/graphics/right-arrow.png);
+  display: inline-block;
+  overflow: hidden;
+  text-indent: -1000em;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+}
+
+.calendar-next-month-arrow {
+  background: url(/static/graphics/left-arrow.png);
+  display: inline-block;
+  overflow: hidden;
+  text-indent: -1000em;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+}
+
+.calendar-box-single-date-box {
+  border: 1px solid #efefef;
+  border-top: 0;
+}
+
+.standard-dosing-day {
+  display: block;
+  font-size: 22px;
+  padding: 10px;
+  text-align: center;
+}
+
+.variant-dosing-day {
+  font-size: 40px;
+  line-height: 3em;
+  padding: 10px;
+  text-align: center;
+  display: block;
+}
+
+.calendar-date-box {
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 5px;
+}
+
+.calendar-box-single-date-box.current-day .calendar-date-box {
+  color: red;
+}
