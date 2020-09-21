@@ -1,5 +1,7 @@
 'use strict';
 
+import {SingleDayComponent} from './single-day-component.js';
+
 const el = React.createElement.bind(React);
 const DATE_FORMAT = 'YYYY-MM-DD';
 const localStorage = window.localStorage;
@@ -96,33 +98,17 @@ export class CalendarComponent extends React.PureComponent {
           patternCount = 0;
         }
       }
-      const strDate = aCalendarDate.format('DD');
-      const attrs = {
-        className: 'calendar-date-box'
-      };
-      const dayAttrs = { 
-        className: 'standard-dosing-day' 
-      };
-      const isToday = aCalendarDate.isSame(today, 'day') ? ' current-day' : '';
-      let displayable = [];
-      if (!_date.isSame(aCalendarDate, 'month')) {
-        attrs.className = 'edge-day-single-box';
-      }
-      if (patternCount >= 0) {
-        displayable = this.state.pattern[patternCount];
-        if (displayable[1]) {
-          dayAttrs.className = 'variant-dosing-day';
-        }
-      }
       if (aCalendarDate.isSameOrAfter(weekStart)) {
         accumulator.push(
-          el('div', {
-            className: 'calendar-box-single-date-box' + isToday
-          },
-          el('span', attrs, strDate),
-          el('span', dayAttrs, displayable[0])));
+          el(SingleDayComponent, {
+            today,
+            activeDate:this.state.activeDate,
+            calendarDisplay:aCalendarDate.format(DATE_FORMAT),
+            patternPosition:patternCount,
+            pattern:this.state.pattern
+          }));
       }
-      aCalendarDate.add(1, 'day');
+      aCalendarDate.add(1, 'day');      
     }
     const headlineMonthFormat = _date.isSame(today, 'year') ? 'MMMM' : 'MMMM YYYY'
     return (
