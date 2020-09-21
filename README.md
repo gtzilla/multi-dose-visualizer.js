@@ -1,6 +1,8 @@
 
 # Multi Dose Visualizer
 
+Live Example: http://multi-dose.developnyc.com/
+
 Visualize staggered dosing amounts for medication.
 For example, if you need to different dosages for thyroid medication. Visually
 shows on a calendar how various patterns will apply for a month. 
