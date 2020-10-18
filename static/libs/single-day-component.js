@@ -4,31 +4,33 @@ const el = React.createElement.bind(React);
 const DATE_FORMAT = 'YYYY-MM-DD';
 
 export class SingleDayComponent extends React.PureComponent {
-  static get propTypes() {
+  static get propTypes () {
     return {
-      today:()=>{},
-      pattern:()=>{},
-      activeDate:()=>{},
-      patternPosition:()=>{},
-      calendarDisplay:()=>{}
-    }
+      today: () => {},
+      pattern: () => {},
+      activeDate: () => {},
+      patternPosition: () => {},
+      calendarDisplay: () => {}
+    };
   }
-  static get defaultProps() {
+
+  static get defaultProps () {
     return {
-      today:moment(),
-      pattern:[],
-      patternPosition:0,
-      activeDate:moment()
-    }
+      today: moment(),
+      pattern: [],
+      patternPosition: 0,
+      activeDate: moment()
+    };
   }
-  render() {
+
+  render () {
     let displayable = [];
     const attrs = {
       className: 'calendar-date-box'
     };
-    const dayAttrs = { 
-      className: 'standard-dosing-day' 
-    };    
+    const dayAttrs = {
+      className: 'standard-dosing-day'
+    };
     const today = this.props.today;
     const patternPos = this.props.patternPosition;
     const pattern = this.props.pattern;
@@ -45,13 +47,13 @@ export class SingleDayComponent extends React.PureComponent {
       if (displayable[1]) {
         dayAttrs.className = 'variant-dosing-day';
       }
-    }    
+    }
     return (
       el('div', {
-          className: 'calendar-box-single-date-box' + isToday
-        },
-        el('span', attrs, strDate),
-        el('span', dayAttrs, displayable[0]))      
-      )    
+        className: 'calendar-box-single-date-box' + isToday
+      },
+      el('span', attrs, strDate),
+      el('span', dayAttrs, displayable[0]))
+    );
   }
 }

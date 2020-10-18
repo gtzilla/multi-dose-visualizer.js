@@ -24,7 +24,7 @@
     "underscore": "^1.10.2"
   },
   "scripts": {
-    "lint":"eslint --fix && stylelint --fix static/css/*.css",
+    "lint":"eslint --fix static/*/*.js && stylelint --fix static/css/*.css",
     "start": "docker-compose -f docker-compose.yaml up"
   }
 }
