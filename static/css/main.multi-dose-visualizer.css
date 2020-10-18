@@ -33,6 +33,7 @@ input {
 .visualize-input-label input:focus {
   border-color: red;
 }
+
 .calendar-component-header ul {
   display: grid;
   list-style: none;
@@ -40,17 +41,24 @@ input {
   grid-template-columns: repeat(7, 1fr);
   border: 1px solid #efefef;
   text-align: center;
-  color:#888;
-  padding:5px 0;
+  color: #888;
+  padding: 5px 0;
 }
-.calendar-component-header ul li:last-child {
-  border:0;
-}
+
 .calendar-component-header ul li {
-  border-right:1px solid #efefef;
+  border-right: 1px solid #efefef;
 }
+
+.calendar-controls-next-back ul li {
+  cursor: pointer;
+}
+
+.calendar-component-header ul li:last-child {
+  border: 0;
+}
+
 .calendar-component-box {
-  /*border-top: 1px solid #efefef;*/
+  /* border-top: 1px solid #efefef; */
   display: grid;
   margin: 0 8vw;
   grid-template-columns: repeat(7, 1fr);
@@ -81,10 +89,6 @@ input {
   display: flex;
   justify-content: flex-end;
   grid-gap: 20px;
-}
-
-.calendar-controls-next-back ul li {
-  cursor: pointer;
 }
 
 .edge-day-single-box {

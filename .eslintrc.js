@@ -14,7 +14,7 @@ module.exports = {
     },    
     "parserOptions": {
         "ecmaFeatures": {
-            "jsx": true
+            "jsx": false
         },
         "ecmaVersion": 12,
         "sourceType": "module"
@@ -22,7 +22,7 @@ module.exports = {
     "globals":{
         "_": 'readonly',
         "moment": 'readonly',
-        "Navigo": 'readonly',
+        "WebRouter":true,
         React: 'readonly',
         ReactDOM: 'readonly',        
     },
