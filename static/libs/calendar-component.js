@@ -13,6 +13,10 @@ function backMonth (_date) {
   return moment(_date).subtract(1, 'month').format(DATE_FORMAT);
 }
 
+export function stringToPattern(str) {
+  return str.split(',').map(item => item.trim());
+}
+
 export function selectIndexUnique (splitted) {
   const obj = {};
   splitted.map(item => item.trim()).filter(item => item).forEach(item => {
@@ -85,7 +89,7 @@ export class CalendarComponent extends React.PureComponent {
     this.setState({
       patternStartDate: e.target.value
     }, () => {
-      this.navigate(this.patternInput.value.split(',').map(item => item.trim()));
+      this.navigate(stringToPattern(this.patternInput.value));
     });
   }
 
@@ -106,7 +110,8 @@ export class CalendarComponent extends React.PureComponent {
   }
 
   onChange (e) {
-    const splitted = e.target.value.split(',').map(item => item.trim());
+    const splitted = stringToPattern(e.target.value);
+    // create [['key1', 0], ['key1',0], ['key3':1]]
     const pattern = buildMultidimensional(splitted);
     this.setState({ pattern });
     localStorage.setItem('pattern', JSON.stringify(pattern));
