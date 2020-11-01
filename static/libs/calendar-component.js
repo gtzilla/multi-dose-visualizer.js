@@ -13,7 +13,7 @@ function backMonth (_date) {
   return moment(_date).subtract(1, 'month').format(DATE_FORMAT);
 }
 
-export function stringToPattern(str) {
+export function stringToPattern (str) {
   return str.split(',').map(item => item.trim());
 }
 

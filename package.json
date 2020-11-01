@@ -19,7 +19,7 @@
     "react-dom": "^16.13.1",
     "semistandard": "^14.2.3",
     "stylelint": "^13.6.1",
-    "web-router.js":"^2.1.1",
+    "web-router.js":"^3.0.1",
     "stylelint-config-standard": "^20.0.0",    
     "underscore": "^1.10.2"
   },
